@@ -59,8 +59,9 @@ export async function POST(req: Request) {
             verifyCode,
             username
         )
-
-        if (emailResponse.success!) {
+        console.log("emailResponse", emailResponse);
+        
+        if (!emailResponse.success) {
             return Response.json({
                 success: false,
                 message: emailResponse.message
