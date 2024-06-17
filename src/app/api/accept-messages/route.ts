@@ -67,6 +67,7 @@ export async function GET(Request: Request) {
         })    
 
     } catch (error:any) {
+        console.log("error sending message", error.message);
         return Response.json({
             success: false,
             message: error.message
